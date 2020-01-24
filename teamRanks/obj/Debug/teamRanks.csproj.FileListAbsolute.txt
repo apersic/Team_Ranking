@@ -1,0 +1,9 @@
+C:\Users\CopaCannale\Documents\DSTG\projekt\teamRanks\teamRanks\bin\Debug\teamRanks.exe.config
+C:\Users\CopaCannale\Documents\DSTG\projekt\teamRanks\teamRanks\bin\Debug\teamRanks.exe
+C:\Users\CopaCannale\Documents\DSTG\projekt\teamRanks\teamRanks\bin\Debug\teamRanks.pdb
+C:\Users\CopaCannale\Documents\DSTG\projekt\teamRanks\teamRanks\obj\Debug\teamRanks.csprojAssemblyReference.cache
+C:\Users\CopaCannale\Documents\DSTG\projekt\teamRanks\teamRanks\obj\Debug\teamRanks.Form1.resources
+C:\Users\CopaCannale\Documents\DSTG\projekt\teamRanks\teamRanks\obj\Debug\teamRanks.Properties.Resources.resources
+C:\Users\CopaCannale\Documents\DSTG\projekt\teamRanks\teamRanks\obj\Debug\teamRanks.csproj.GenerateResource.cache
+C:\Users\CopaCannale\Documents\DSTG\projekt\teamRanks\teamRanks\obj\Debug\teamRanks.exe
+C:\Users\CopaCannale\Documents\DSTG\projekt\teamRanks\teamRanks\obj\Debug\teamRanks.pdb
