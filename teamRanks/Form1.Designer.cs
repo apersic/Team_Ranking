@@ -62,7 +62,7 @@
             // 
             // listViewRanking
             // 
-            this.listViewRanking.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.listViewRanking.BackColor = System.Drawing.SystemColors.ControlDark;
             this.listViewRanking.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listViewRanking.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewRanking.HideSelection = false;
@@ -155,7 +155,7 @@
             // 
             // listViewAdjacencyMatrix
             // 
-            this.listViewAdjacencyMatrix.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.listViewAdjacencyMatrix.BackColor = System.Drawing.SystemColors.ControlDark;
             this.listViewAdjacencyMatrix.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listViewAdjacencyMatrix.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewAdjacencyMatrix.HideSelection = false;
@@ -167,7 +167,7 @@
             // 
             // listViewStrenghtMatrix
             // 
-            this.listViewStrenghtMatrix.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.listViewStrenghtMatrix.BackColor = System.Drawing.SystemColors.ControlDark;
             this.listViewStrenghtMatrix.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listViewStrenghtMatrix.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewStrenghtMatrix.HideSelection = false;
@@ -192,7 +192,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(699, 641);
             this.Controls.Add(this.listViewStrenghtMatrix);
             this.Controls.Add(this.listViewAdjacencyMatrix);
