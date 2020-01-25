@@ -16,16 +16,19 @@ namespace teamRanks
         public Form1()
         {
             InitializeComponent();
+            //initializing Ranking class
             ranking = new Ranking();
-            ShowData();
+            //showing matrices
+            ShowAdjacencyMatrix();
+            ShowStrenghtMatrix();
         }
 
         private void uiGetRankings_Click(object sender, EventArgs e)
         {
-            ShowData();
+            ShowRankings();
         }
 
-        public void ShowData()
+        public void ShowRankings()
         {
             listViewRanking.Columns.Clear();
             listViewRanking.Items.Clear();
@@ -44,6 +47,72 @@ namespace teamRanks
             }
  
             listViewRanking.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        public void ShowAdjacencyMatrix()
+        {
+            var adjacencyMatrix = ranking.GetAdjacencyMatrix();
+
+            //creating headers
+            listViewAdjacencyMatrix.View = View.Details;
+            listViewAdjacencyMatrix.Columns.Add("A");
+            listViewAdjacencyMatrix.Columns.Add("B");
+            listViewAdjacencyMatrix.Columns.Add("C");
+            listViewAdjacencyMatrix.Columns.Add("D");
+            listViewAdjacencyMatrix.Columns.Add("E");
+            listViewAdjacencyMatrix.Columns.Add("F");
+            listViewAdjacencyMatrix.Columns.Add("G");
+            listViewAdjacencyMatrix.Columns.Add("H");
+
+            //populating rows
+            for (int i = 0; i < 8; i++)
+            {
+                string[] row = new string[8];
+
+                for (int j = 0; j < 8; j++)
+                {
+                    row[j] = adjacencyMatrix[i, j].ToString();
+                }
+
+                listViewAdjacencyMatrix.Items.Add(new ListViewItem(row));
+                listViewAdjacencyMatrix.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            }
+        }
+
+        public void ShowStrenghtMatrix()
+        {
+            var strenghtMatrix = ranking.GetStrenghtMatrix();
+
+            //creating headers
+            listViewStrenghtMatrix.View = View.Details;
+            listViewStrenghtMatrix.Columns.Add("A");
+            listViewStrenghtMatrix.Columns.Add("B");
+            listViewStrenghtMatrix.Columns.Add("C");
+            listViewStrenghtMatrix.Columns.Add("D");
+            listViewStrenghtMatrix.Columns.Add("E");
+            listViewStrenghtMatrix.Columns.Add("F");
+            listViewStrenghtMatrix.Columns.Add("G");
+            listViewStrenghtMatrix.Columns.Add("H");
+
+            //populating rows
+            //populating rows
+            for (int i = 0; i < 8; i++)
+            {
+                string[] row = new string[8];
+
+                for (int j = 0; j < 8; j++)
+                {
+                    row[j] = strenghtMatrix[i, j].ToString();
+                }
+
+                listViewStrenghtMatrix.Items.Add(new ListViewItem(row));
+                listViewStrenghtMatrix.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            }
+        }
+
+        private void uiCloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

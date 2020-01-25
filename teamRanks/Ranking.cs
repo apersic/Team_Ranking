@@ -10,34 +10,45 @@ namespace teamRanks
     {
         public Team[] teams;
         public int[,] adjacencyMatrix;
+        public int[,] strenghtMatrix;
         public Ranking()
         {
             SetData();
             GetStrenght();
         }
 
+        public int[,] GetAdjacencyMatrix()
+        {
+            return this.adjacencyMatrix;
+        }
+
+        public int[,] GetStrenghtMatrix()
+        {
+            return this.strenghtMatrix;
+        }
+
         void SetData()
         {
             //hardcoded adjacency matrix
-            this.adjacencyMatrix = new int[8, 8] { {0, 0, 0, 0, 1, 0, 0, 0 },
-                                                 {1, 0, 0, 0, 0, 0, 0, 0 },
-                                                 {0, 0, 0, 0, 0, 0, 0, 1 },
-                                                 {0, 0, 1, 0, 0, 1, 0, 0 },
+            this.adjacencyMatrix = new int[8, 8] { {0, 0, 1, 0, 1, 1, 0, 0 },
+                                                 {1, 0, 0, 1, 1, 0, 0, 0 },
+                                                 {0, 1, 0, 0, 0, 1, 1, 1 },
+                                                 {1, 0, 1, 0, 0, 1, 1, 0 },
                                                  {0, 0, 1, 1, 0, 0, 0, 0 },
-                                                 {0, 0, 0, 0, 0, 0, 1, 0 },
-                                                 {0, 1, 0, 0, 0, 0, 0, 0 },
-                                                 {0, 0, 0, 1, 0, 0, 0, 0 } };
+                                                 {0, 1, 0, 0, 1, 0, 1, 0 },
+                                                 {1, 1, 0, 0, 1, 0, 0, 0 },
+                                                 {1, 1, 0, 1, 1, 1, 1, 0 } };
 
             //hardcoded teams
             this.teams = new Team[8];
-            this.teams[0] = new Team("Rochester Americans", "A");
-            this.teams[1] = new Team("Utica Comets", "B");
-            this.teams[2] = new Team("Toronto Marlies", "C");
-            this.teams[3] = new Team("Belleville Senators", "D");
-            this.teams[4] = new Team("Laval Rocket", "E");
-            this.teams[5] = new Team("Syracuse Crunch", "F");
-            this.teams[6] = new Team("Cleveland Monsters", "G");
-            this.teams[7] = new Team("Binghamton Devils", "H");
+            this.teams[0] = new Team("Los Angeles Kings", "A");
+            this.teams[1] = new Team("Vancouver Canucks", "B");
+            this.teams[2] = new Team("Edmonton Oilers", "C");
+            this.teams[3] = new Team("San Jose Sharks", "D");
+            this.teams[4] = new Team("Arizona Coyotes", "E");
+            this.teams[5] = new Team("Vegas Golden Knights", "F");
+            this.teams[6] = new Team("Anaheim Ducks", "G");
+            this.teams[7] = new Team("Calgary Flames", "H");
         }
 
         public void GetStrenght()
@@ -56,13 +67,13 @@ namespace teamRanks
             }
 
             //calculating matrix + matrix^2
-            int[,] strenghtMatrix = new int[8, 8];
+            this.strenghtMatrix = new int[8, 8];
 
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    strenghtMatrix[i, j] = this.adjacencyMatrix[i, j] + matrixSquared[i, j];
+                    this.strenghtMatrix[i, j] = this.adjacencyMatrix[i, j] + matrixSquared[i, j];
                 }
             }
 
@@ -72,7 +83,7 @@ namespace teamRanks
                 int strenght = 0;
                 for (int j = 0; j < 8; j++)
                 {
-                    strenght += strenghtMatrix[i, j];
+                    strenght += this.strenghtMatrix[i, j];
                 }
 
                 this.teams[i].SetStrenght(strenght);
@@ -81,7 +92,18 @@ namespace teamRanks
 
         public List<Team> RankTeams()
         {
+            //sorting teams by strenght
             var rankedTeams = this.teams.OrderBy(x => x.GetStrenght()).ToList();
+
+            //checking teams with equal strenght
+            /*
+            for (int i = rankedTeams.Count - 1; i <= 0; i--)
+            {
+                if (rankedTeams[i].GetStrenght() == rankedTeams[i - 1].GetStrenght())
+                {
+
+                }
+            }*/
 
             return rankedTeams;
         }
