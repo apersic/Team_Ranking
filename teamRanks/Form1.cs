@@ -36,14 +36,14 @@ namespace teamRanks
             List<Team> teams = this.ranking.RankTeams();
 
             listViewRanking.View = View.Details;
-            listViewRanking.Columns.Add("Pozicija");
-            listViewRanking.Columns.Add("Ime tima");
-            listViewRanking.Columns.Add("Vrh");
-            listViewRanking.Columns.Add("Snaga");
+            listViewRanking.Columns.Add("Position");
+            listViewRanking.Columns.Add("Team name");
+            listViewRanking.Columns.Add("Vertex");
+            listViewRanking.Columns.Add("Strenght");
 
             for (int i = teams.Count -1 ; i >= 0; i--)
             {
-                listViewRanking.Items.Add(new ListViewItem(new[] { (teams.Count - i).ToString(), teams[i].teamName, teams[i].vertex, teams[i].strenght.ToString() }));
+                listViewRanking.Items.Add(new ListViewItem(new[] { teams[i].position.ToString(), teams[i].teamName, teams[i].vertex, teams[i].strenght.ToString() }));
             }
  
             listViewRanking.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -113,6 +113,11 @@ namespace teamRanks
         private void uiCloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
