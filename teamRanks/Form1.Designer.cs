@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.listViewAdjacencyMatrix = new System.Windows.Forms.ListView();
             this.listViewStrenghtMatrix = new System.Windows.Forms.ListView();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,6 +75,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.WindowText;
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.uiCloseButton);
             this.panel1.Location = new System.Drawing.Point(0, -3);
             this.panel1.Name = "panel1";
@@ -175,6 +177,17 @@
             this.listViewStrenghtMatrix.TabIndex = 10;
             this.listViewStrenghtMatrix.UseCompatibleStateImageBehavior = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(9, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 25);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Team ranking";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,6 +207,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -218,6 +232,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListView listViewAdjacencyMatrix;
         private System.Windows.Forms.ListView listViewStrenghtMatrix;
+        private System.Windows.Forms.Label label4;
     }
 }
 
