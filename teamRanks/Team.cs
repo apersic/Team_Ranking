@@ -11,11 +11,18 @@ namespace teamRanks
         public string teamName;
         public string vertex;
         public int strenght;
+        public int matrixIndex;
 
-        public Team(string teamName, string vertex)
+        public Team(string teamName, string vertex, int matrixIndex)
         {
             this.teamName = teamName;
             this.vertex = vertex;
+            this.matrixIndex = matrixIndex;
+        }
+
+        public int GetMatrixIndex()
+        {
+            return this.matrixIndex;
         }
 
         public string GetTeamName()

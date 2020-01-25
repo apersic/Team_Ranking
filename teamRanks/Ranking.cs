@@ -41,14 +41,14 @@ namespace teamRanks
 
             //hardcoded teams
             this.teams = new Team[8];
-            this.teams[0] = new Team("Los Angeles Kings", "A");
-            this.teams[1] = new Team("Vancouver Canucks", "B");
-            this.teams[2] = new Team("Edmonton Oilers", "C");
-            this.teams[3] = new Team("San Jose Sharks", "D");
-            this.teams[4] = new Team("Arizona Coyotes", "E");
-            this.teams[5] = new Team("Vegas Golden Knights", "F");
-            this.teams[6] = new Team("Anaheim Ducks", "G");
-            this.teams[7] = new Team("Calgary Flames", "H");
+            this.teams[0] = new Team("Los Angeles Kings", "A", 0);
+            this.teams[1] = new Team("Vancouver Canucks", "B", 1);
+            this.teams[2] = new Team("Edmonton Oilers", "C", 2);
+            this.teams[3] = new Team("San Jose Sharks", "D", 3);
+            this.teams[4] = new Team("Arizona Coyotes", "E", 4);
+            this.teams[5] = new Team("Vegas Golden Knights", "F", 5);
+            this.teams[6] = new Team("Anaheim Ducks", "G", 6);
+            this.teams[7] = new Team("Calgary Flames", "H", 7);
         }
 
         public void GetStrenght()
@@ -96,14 +96,29 @@ namespace teamRanks
             var rankedTeams = this.teams.OrderBy(x => x.GetStrenght()).ToList();
 
             //checking teams with equal strenght
-            /*
-            for (int i = rankedTeams.Count - 1; i <= 0; i--)
-            {
-                if (rankedTeams[i].GetStrenght() == rankedTeams[i - 1].GetStrenght())
-                {
+            return CheckStrenghtMatrix(rankedTeams);
+        }
 
+        //function for checking results between teams with equal strenght
+        public List<Team> CheckStrenghtMatrix(List<Team> rankedTeams) 
+        {
+            //iterating through teams
+            for (int i = 0; i < rankedTeams.Count; i++)
+            {
+                for (int j = 0; j < rankedTeams.Count; j++)
+                {
+                    if (rankedTeams[i].GetStrenght() == rankedTeams[j].GetStrenght())
+                    {
+                        //cheking if the team i defeated team j and replacing their postitions
+                        if (adjacencyMatrix[rankedTeams[i].GetMatrixIndex(), rankedTeams[j].GetMatrixIndex()] == 0)
+                        {
+                            Team temp = rankedTeams[i];
+                            rankedTeams[i] = rankedTeams[j];
+                            rankedTeams[j] = temp;
+                        }
+                    }
                 }
-            }*/
+            }
 
             return rankedTeams;
         }
